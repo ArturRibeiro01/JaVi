@@ -1,0 +1,53 @@
+# Xcode
+*.xcuserdata
+*.xccheckout
+*.xcodeproj/project.xcworkspace/xcuserdata
+DerivedData/
+.idea/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# SwiftPM
+.build/
+.swiftpm/xcode/package.xcworkspace/xcuserdata
+
+# SwiftPM artifacts
+.build/
+Package.resolved
+
+# Playground
+timeline.xctimeline
+playground.xcworkspace
+
+# CocoaPods (se usar futuramente)
+Pods/
+Podfile.lock
+
+# Carthage (caso use)
+Carthage/
+
+# Firebase
+GoogleService-Info.plist
+
+# Arquivos do sistema
+.DS_Store
+
+# Logs
+*.log
+
+# Bundle do app gerado
+*.app
+
+# Arquivos temporários
+*.tmp
+*.swp
+*.lock
+*.orig
+
+# SPM checkouts
+checkouts/
+
+# Firebase config
+GoogleService-Info.plist
