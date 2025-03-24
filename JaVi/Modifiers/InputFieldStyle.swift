@@ -12,6 +12,7 @@ struct InputFieldStyle: ViewModifier {
         content
             .padding()
             .background(Color(.systemGray6))
+            .foregroundColor(Color.teal)
             .cornerRadius(12)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)

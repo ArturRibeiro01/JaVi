@@ -4,17 +4,16 @@ struct SplashView: View {
     @StateObject private var viewModel = SplashViewModel()
 
     var body: some View {
-        
-        if let isLoggedIn = viewModel.isUserLoggedIn {
-            if isLoggedIn {
-                            Text("Tela Principal (placeholder)")
-                        } else {
-                            LoginView()
-                        }
+        if viewModel.splashFinished {
+            if viewModel.isUserLoggedIn {
+                HomeView()
+            } else {
+                LoginView()
+            }
         } else {
             ZStack {
                 Color.black.ignoresSafeArea()
-                
+
                 VStack(spacing: 20) {
                     Text("Já vi")
                         .font(.system(size: 50, weight: .bold))
