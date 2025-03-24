@@ -4,7 +4,6 @@ struct SplashView: View {
     @StateObject private var viewModel = SplashViewModel()
 
     var body: some View {
-        
         if let isLoggedIn = viewModel.isUserLoggedIn {
             if isLoggedIn {
                             Text("Tela Principal (placeholder)")
