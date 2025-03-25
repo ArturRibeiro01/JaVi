@@ -8,6 +8,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var viewModel = LoginViewModel()
+    @AppStorage("isUserLoggedIn") var isUserLoggedIn: Bool = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -18,7 +19,7 @@ struct LoginView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
-
+                
                 Text("Login")
                     .font(.title2)
                     .fontWeight(.medium)
@@ -105,7 +106,14 @@ struct LoginView: View {
                     foreground: Color.white,
                     border: true,
                     action: {
-                        // login with Google
+                        GoogleAuthService.shared.signInWithGoogle { result in
+                            switch result {
+                            case .success:
+                                isUserLoggedIn = true
+                            case .failure(let error):
+                                print("Erro ao logar com Google: \(error.localizedDescription)")
+                            }
+                        }
                     }
                 )
             }
