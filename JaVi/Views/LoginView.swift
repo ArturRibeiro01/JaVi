@@ -71,7 +71,6 @@ struct LoginView: View {
                 .padding(.top, 8)
             }
 
-            // Separador visual
             HStack {
                 Rectangle()
                     .frame(height: 1)
@@ -86,18 +85,16 @@ struct LoginView: View {
             }
             .padding(.vertical, 12)
 
-            // Botões sociais com mais "respiro"
             VStack(spacing: 16) {
+               
                 socialLoginButton(
                     label: "Iniciar com Apple",
-                    systemImage: "apple.logo",
+                    imageName: "apple-icon",
                     background: Color.black,
                     foreground: Color.white,
                     border: true,
-                    action: {
-                        // login with Apple
-                    }
-                )
+                    action: {}
+                ).disabled(true)
 
                 socialLoginButton(
                     label: "Iniciar com Google",
@@ -116,6 +113,15 @@ struct LoginView: View {
                         }
                     }
                 )
+                
+                socialLoginButton(
+                    label: "Iniciar com Microsoft",
+                    imageName: "windows-icon",
+                    background: Color.black,
+                    foreground: Color.white,
+                    border: true,
+                    action: {}
+                ).disabled(true)
             }
             .padding(.top, 8)
 
@@ -136,11 +142,12 @@ struct LoginView: View {
             HStack {
                 if let systemImage = systemImage {
                     Image(systemName: systemImage)
+                    
                 }
                 if let imageName = imageName {
                     Image(imageName)
                         .resizable()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 18, height: 18)
                 }
                 Text(label)
                     .fontWeight(.medium)
