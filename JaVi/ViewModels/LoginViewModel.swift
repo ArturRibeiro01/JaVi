@@ -7,6 +7,7 @@ final class LoginViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var isLoading = false
     @Published var isLoggedIn = false
+    @Published var showingRegister = false
     @AppStorage("isUserLoggedIn") var isUserLoggedIn: Bool = false
 
     func loginWithEmail() {

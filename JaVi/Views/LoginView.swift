@@ -61,14 +61,15 @@ struct LoginView: View {
                             )
                     }
                 }
-                Button(action: {
-                    // @TO-DO - ação de cadastro no futuro
-                }) {
-                    Text("Ainda não tem conta? Cadastre-se")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
+                .sheet(isPresented: $viewModel.showingRegister) {
+                    RegisterView()
                 }
-                .padding(.top, 8)
+                Button("Ainda não tem conta? Cadastre-se") {
+                    viewModel.showingRegister = true
+                }
+                .font(.footnote)
+                .foregroundColor(.white)
+                
             }
 
             HStack {
@@ -95,6 +96,7 @@ struct LoginView: View {
                     border: true,
                     action: {}
                 ).disabled(true)
+                 .opacity(0.4)
 
                 socialLoginButton(
                     label: "Iniciar com Google",
@@ -121,7 +123,7 @@ struct LoginView: View {
                     foreground: Color.white,
                     border: true,
                     action: {}
-                ).disabled(true)
+                ).disabled(true).opacity(0.4)
             }
             .padding(.top, 8)
 
