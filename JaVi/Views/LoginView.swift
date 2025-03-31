@@ -88,15 +88,15 @@ struct LoginView: View {
 
             VStack(spacing: 16) {
                
-                socialLoginButton(
-                    label: "Iniciar com Apple",
-                    imageName: "apple-icon",
-                    background: Color.black,
-                    foreground: Color.white,
-                    border: true,
-                    action: {}
-                ).disabled(true)
-                 .opacity(0.4)
+//                socialLoginButton(
+//                    label: "Iniciar com Apple",
+//                    imageName: "apple-icon",
+//                    background: Color.black,
+//                    foreground: Color.white,
+//                    border: true,
+//                    action: {}
+//                ).disabled(true)
+//                 .opacity(0.4)
 
                 socialLoginButton(
                     label: "Iniciar com Google",
@@ -116,14 +116,14 @@ struct LoginView: View {
                     }
                 )
                 
-                socialLoginButton(
-                    label: "Iniciar com Microsoft",
-                    imageName: "windows-icon",
-                    background: Color.black,
-                    foreground: Color.white,
-                    border: true,
-                    action: {}
-                ).disabled(true).opacity(0.4)
+//                socialLoginButton(
+//                    label: "Iniciar com Microsoft",
+//                    imageName: "windows-icon",
+//                    background: Color.black,
+//                    foreground: Color.white,
+//                    border: true,
+//                    action: {}
+//                ).disabled(true).opacity(0.4)
             }
             .padding(.top, 8)
 
